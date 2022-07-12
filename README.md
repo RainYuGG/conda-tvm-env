@@ -5,7 +5,6 @@ Our target version:
 - TVM version=0.9.dev0
 - LLVM version=11.0.0
 
-## Install conda and llvm dependency
 
 we use conda virtual environment to install dependent plugins.
 So you need to install conda by yourself.
@@ -26,7 +25,27 @@ Now, you have this tree structure of the folders.
     ├── build-environment.yaml
     ├── meta.yaml
     └── config.cmake
+
 ```
+
+## Method 1
+Easily run the script at parent folder where you clone these two git package.
+```shell
+chmod +x conda-tvm-env/script.sh
+source conda-tvm-env/script.sh
+```
+- this script includes patch step, creating venv, and the following cmake llvm setting.
+- So you need to place ```tvm.patch``` to ```conda-tvm-env``` folder.
+
+
+## Method 2
+Create the conda virtual environment with dependency.
+```shell
+cd /path/to/conda-tvm-env
+conda create -- file build-environment.yaml
+```
+
+### Install conda and llvm dependency
 #### Patch
 Use the patch file from Prof. Hong if needed.
 You should get the ```tvm.patch``` file from professor.
@@ -38,21 +57,6 @@ patch -p1 < ../conda-tvm-env/tvm.patch
 ```
 
 ### Create virtual env
-#### Method 1
-Create the conda virtual environment with dependency.
-```shell
-cd /path/to/conda-tvm-env
-conda create -- file build-environment.yaml
-```
-
-#### Method 2
-Or just easily run the script at parent folder where you clone these two git package.
-```shell
-chmod +x conda-tvm-env/script.sh
-source conda-tvm-env/script.sh
-```
-- this script includes patch step, creating venv, and the following cmake llvm setting.
-- So you need to place ```tvm.patch``` to ```conda-tvm-env``` folder.
 
 Enter the venv.
 ```shell
@@ -61,7 +65,7 @@ conda activate tvm-env
 After this command, all of works are in venv.
 
 
-## Build TVM
+### Build TVM
 Before you build TVM, you need to replace your llvm location in the line 136 of ```config.cmake``` file.
 ```shell
 set(USE_LLVM /path/to/bin/llvm-config)
@@ -75,7 +79,8 @@ cd /path/to/tvm/build
 cp ../../conda-tvm-env/config.cmake .
 sed -i "s+set(USE_LLVM ON)+set(USE_LLVM $(which llvm-config))+g" config.cmake
 ```
-
+--------------------------------------------------------------------------
+- If you use method 2, continue from here.
 After setting LLVM, build TVM in ```tvm/build``` folder.
 ```shell
 cmake ..

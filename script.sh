@@ -6,5 +6,6 @@ cp ../conda-tvm-env/build-environment.yaml conda/.
 conda env create --file conda/build-environment.yaml
 conda activate tvm-env
 mkdir build
-cp ../conda-tvm-env/config.cmake build/.
-sed -i "s+set(USE_LLVM ON)+set(USE_LLVM $(which llvm-config))+g" build/config.cmake
+cd build
+cp ../../conda-tvm-env/config.cmake .
+sed -i "s+set(USE_LLVM ON)+set(USE_LLVM $(which llvm-config))+g" config.cmake
