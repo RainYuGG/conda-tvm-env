@@ -29,7 +29,7 @@ Now, you have this tree structure of the folders.
 ```
 
 ## Method 1
-Easily run the script at parent folder where you clone these two git package.
+Easily run the script at parent folder where you clone these two git packages.
 ```shell
 chmod +x conda-tvm-env/script.sh
 source conda-tvm-env/script.sh
@@ -39,24 +39,24 @@ source conda-tvm-env/script.sh
 
 
 ## Method 2
+### Create virtual env
 Create the conda virtual environment with dependency.
 ```shell
 cd /path/to/conda-tvm-env
 conda create -- file build-environment.yaml
 ```
 
-### Install conda and llvm dependency
-#### Patch
+### Patch
 Use the patch file from Prof. Hong if needed.
-You should get the ```tvm.patch``` file from professor.
-We use TVM commmit ```395e91ff54543864a90240d18c8efd8c277c758b```.
+- You should get the ```tvm.patch``` file from the professor.
+- You also need to place ```tvm.patch``` to ```conda-tvm-env``` folder.
+
+Since we use TVM commmit ```395e91ff54543864a90240d18c8efd8c277c758b```.
 ```shell
 cd tvm
 git checkout 395e91ff54543864a90240d18c8efd8c277c758b
 patch -p1 < ../conda-tvm-env/tvm.patch
 ```
-
-### Create virtual env
 
 Enter the venv.
 ```shell
@@ -79,8 +79,10 @@ cd /path/to/tvm/build
 cp ../../conda-tvm-env/config.cmake .
 sed -i "s+set(USE_LLVM ON)+set(USE_LLVM $(which llvm-config))+g" config.cmake
 ```
---------------------------------------------------------------------------
+## 
+
 - If you use method 2, continue from here.
+
 After setting LLVM, build TVM in ```tvm/build``` folder.
 ```shell
 cmake ..
