@@ -49,7 +49,7 @@ conda create -- file build-environment.yaml
 Or just easily run the script at parent folder where you clone these two git package.
 ```shell
 chmod +x conda-tvm-env/script.sh
-bash conda-tvm-env/script.sh
+source conda-tvm-env/script.sh
 ```
 - this script includes patch step, creating venv, and the following cmake llvm setting.
 - So you need to place ```tvm.patch``` to ```conda-tvm-env``` folder.
