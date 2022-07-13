@@ -9,3 +9,5 @@ mkdir build
 cd build
 cp ../../conda-tvm-env/config.cmake .
 sed -i "s+set(USE_LLVM ON)+set(USE_LLVM $(which llvm-config))+g" config.cmake
+cmake ..
+make -j4
