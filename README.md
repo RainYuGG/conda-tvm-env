@@ -81,8 +81,6 @@ sed -i "s+set(USE_LLVM ON)+set(USE_LLVM $(which llvm-config))+g" config.cmake
 ```
 ## 
 
-- If you use method 2, continue from here.
-
 After setting LLVM, build TVM in ```tvm/build``` folder.
 ```shell
 cmake ..
