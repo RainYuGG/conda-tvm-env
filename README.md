@@ -5,16 +5,19 @@ Our target version:
 - TVM version=0.9.dev0
 - LLVM version=11.0.0
 
-
-we use conda virtual environment to install dependent plugins.
-So you need to install conda by yourself.
-
-
 First, clone TVM from github.
 ```shell
 git clone --recursive https://github.com/apache/tvm tvm
 git clone https://github.com/RainYuGG/conda-tvm-env.git
 ```
+
+we use conda virtual environment to install dependent plugins.
+So you need to install [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html) by yourself, or use the ```.sh``` file.
+```shell
+chmod +x conda-tvm-env/Miniconda3-latest-Linux-x86_64.sh
+source conda-tvm-env/Miniconda3-latest-Linux-x86_64.sh
+```
+- If your system are not linux, you should download current version instead of using this ```.sh``` file .
 
 Now, you have this tree structure of the folders.
 ```shell
@@ -39,6 +42,9 @@ source conda-tvm-env/script.sh
 
 
 ## Method 2
+
+Do everything by yourself.
+
 ### Create virtual env
 Create the conda virtual environment with dependency.
 ```shell
@@ -79,13 +85,17 @@ cd /path/to/tvm/build
 cp ../../conda-tvm-env/config.cmake .
 sed -i "s+set(USE_LLVM ON)+set(USE_LLVM $(which llvm-config))+g" config.cmake
 ```
-## 
+
 
 After setting LLVM, build TVM in ```tvm/build``` folder.
 ```shell
 cmake ..
 make -j4
 ```
+
+## 
+
+## Post installation
 
 Install some relative python packages of TVM.
 ```shell
