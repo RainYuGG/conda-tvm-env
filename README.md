@@ -69,6 +69,7 @@ Enter the venv.
 conda activate tvm-env
 ```
 After this command, all of works are in venv.
+- Everytime you want to use TVM, you should type this first.
 
 
 ### Build TVM
