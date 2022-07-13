@@ -32,7 +32,7 @@ Now, you have this tree structure of the folders.
 ```
 
 ## Method 1
-Easily run the script at parent folder where you clone these two git packages.
+Easily run the script at folder where you clone these two git packages.
 ```shell
 chmod +x conda-tvm-env/script.sh
 source conda-tvm-env/script.sh
