@@ -15,7 +15,7 @@ we use conda virtual environment to install dependent plugins.
 So you need to install [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html) by yourself, or use the ```.sh``` file.
 ```shell
 chmod +x conda-tvm-env/Miniconda3-latest-Linux-x86_64.sh
-source conda-tvm-env/Miniconda3-latest-Linux-x86_64.sh
+bash conda-tvm-env/Miniconda3-latest-Linux-x86_64.sh
 ```
 - If your system are not linux, you should download current version instead of using this ```.sh``` file .
 
@@ -35,7 +35,7 @@ Now, you have this tree structure of the folders.
 Easily run the script at folder where you clone these two git packages.
 ```shell
 chmod +x conda-tvm-env/script.sh
-bash conda-tvm-env/script.sh
+source conda-tvm-env/script.sh
 ```
 - this script includes patch step, creating venv, and the following cmake llvm setting.
 - So you need to place ```tvm.patch``` to ```conda-tvm-env``` folder.
