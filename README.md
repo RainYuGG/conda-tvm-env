@@ -50,7 +50,7 @@ Do everything by yourself.
 ### Create virtual env
 Create the conda virtual environment with dependency.
 ```shell
-cd /path/to/conda-tvm-env
+cd conda-tvm-env
 conda create -- file build-environment.yaml
 ```
 
