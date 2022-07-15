@@ -18,6 +18,8 @@ chmod +x conda-tvm-env/Miniconda3-latest-Linux-x86_64.sh
 bash conda-tvm-env/Miniconda3-latest-Linux-x86_64.sh
 ```
 - If your system are not linux, you should download current version instead of using this ```.sh``` file .
+- If you're using the *csl server*, you have better install conda at ```/local/username/``` of *gpuXX server*.
+- After install conda you should ```source ~/.bashrc``` first.
 
 Now, you have this tree structure of the folders.
 ```shell
