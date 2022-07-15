@@ -39,8 +39,8 @@ Easily run the script at folder where you clone these two git packages.
 chmod +x conda-tvm-env/script.sh
 source conda-tvm-env/script.sh
 ```
-- this script includes patch step, creating venv, and the following cmake llvm setting.
-- So you need to place ```tvm.patch``` to ```conda-tvm-env``` folder.
+- This script includes patch step, creating venv, and the following cmake llvm setting, so you need to place ```tvm.patch``` to ```conda-tvm-env``` folder.
+- If your PC isn't installing **cuda & cudnn**, you should edit ```build-environment.yaml``` file and unquote line of cudatoolkit and cudnn.
 
 
 ## Method 2
@@ -53,11 +53,8 @@ Create the conda virtual environment with dependency.
 cd conda-tvm-env
 conda env create --file build-environment.yaml
 ```
-- If you use your PC without installing **cuda**, use the deifferet ```.yaml``` file.
-```shell
-cd conda-tvm-env
-conda env create --file local-build-environment.yaml
-```
+- If your PC isn't installing **cuda & cudnn**, you should edit ```build-environment.yaml``` file and unquote line of cudatoolkit and cudnn.
+
 
 
 ### Patch
@@ -104,11 +101,6 @@ make -j4
 ## 
 
 ## Post installation
-
-Install some relative python packages of TVM.
-```shell
-python -m pip install  numpy decorator attrs tornado psutil 'xgboost<1.6.0' cloudpickle
-```
 
 Set the environment values in ``` ~/.bashrc ```. 
 ```shell
