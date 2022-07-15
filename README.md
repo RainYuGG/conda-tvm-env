@@ -18,7 +18,7 @@ chmod +x conda-tvm-env/Miniconda3-latest-Linux-x86_64.sh
 bash conda-tvm-env/Miniconda3-latest-Linux-x86_64.sh
 ```
 - If your system are not linux, you should download current version instead of using this ```.sh``` file .
-- If you're using the *csl server*, you have better install conda at ```/local/username/``` of *gpuXX server*.
+- If you're using the **csl server**, you have better install conda at ```/local/username/``` of **gpuXX server**.
 - After install conda you should ```source ~/.bashrc``` first.
 
 Now, you have this tree structure of the folders.
@@ -51,13 +51,18 @@ Do everything by yourself.
 Create the conda virtual environment with dependency.
 ```shell
 cd conda-tvm-env
-conda create -- file build-environment.yaml
+conda env create --file build-environment.yaml
 ```
+- If you use your PC without installing **cuda**, use the deifferet ```.yaml``` file.
+```shell
+cd conda-tvm-env
+conda env create --file local-build-environment.yaml
+```
+
 
 ### Patch
 Use the patch file from Prof. Hong if needed.
-- You should get the ```tvm.patch``` file from the professor.
-- You also need to place ```tvm.patch``` to ```conda-tvm-env``` folder.
+- You should get the ```tvm.patch``` file from the professor, and also need to place the file to ```conda-tvm-env``` folder.
 
 Since we use TVM commmit ```395e91ff54543864a90240d18c8efd8c277c758b```.
 ```shell
