@@ -37,6 +37,8 @@ dependencies:
   - make
   - scipy
   - pillow
+#  - cudatoolkit-dev
+#  - cudnn
   - numpy
   - decorator
   - attrs
