@@ -5,6 +5,15 @@ Our target version:
 - TVM version=0.9.dev0
 - LLVM version=11.0.0
 
+## Requirement
+Here are some build requirements.
+```shell
+apt-get install cmake
+apt-get install build-essential
+```
+
+## Installation
+
 First, clone TVM from github.
 ```shell
 git clone --recursive https://github.com/apache/tvm tvm
@@ -33,7 +42,7 @@ Now, you have this tree structure of the folders.
 
 ```
 
-## Method 1
+### Method 1
 Easily run the script at folder where you clone these two git packages.
 ```shell
 chmod +x conda-tvm-env/script.sh
@@ -41,9 +50,9 @@ source conda-tvm-env/script.sh
 ```
 - This script includes patch step, creating venv, and the following cmake llvm setting, so you need to place ```tvm.patch``` to ```conda-tvm-env``` folder.
 - If your PC isn't installing **cuda & cudnn**, you should edit ```build-environment.yaml``` file and unquote line of cudatoolkit and cudnn.
+- If you finish the scipt without error, you can directly continue the __post-installation__
 
-
-## Method 2
+### Method 2
 
 Do everything by yourself.
 
@@ -100,7 +109,7 @@ make -j4
 
 ## 
 
-## Post installation
+## Post-installation
 
 Set the environment values in ``` ~/.bashrc ```. 
 ```shell
