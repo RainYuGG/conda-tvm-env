@@ -107,7 +107,6 @@ cmake ..
 make -j4
 ```
 
-## 
 
 ## Post-installation
 
