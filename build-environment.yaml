@@ -22,6 +22,7 @@ name: tvm-env
 channels:
   - anaconda
   - conda-forge
+  - pytorch
 
 # The packages to install to the environment
 dependencies:
@@ -37,8 +38,8 @@ dependencies:
   - make
   - scipy
   - pillow
-#  - cudatoolkit-dev==11.4.0
-#  - cudnn
+# - cudatoolkit-dev==11.4.0
+# - cudnn
   - numpy
   - decorator
   - attrs
@@ -46,3 +47,6 @@ dependencies:
   - psutil
   - xgboost<1.6.0
   - cloudpickle
+  - pytorch
+  - torchvision
+  - torchaudio
