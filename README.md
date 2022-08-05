@@ -8,9 +8,12 @@ Our target version:
 ## Requirement
 Here are some build requirements.
 ```shell
-apt-get install cmake
-apt-get install build-essential
+sudo apt-get install cmake
+sudo apt-get install build-essential
+sudo apt install nvidia-driver-470
 ```
+I install the 470 version of the Nvidia driver as same as our server.
+- After you install Nvidia driver, you need to `reboot`
 
 ## Installation
 
